@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Sở thích của bạn</title>
+    <style>
+        body {
+            background-color: #ccffff;
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            width: 600px;
+            background-color: white;
+            margin: 30px auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+        .form-title {
+            background-color: orangered;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .form-row {
+            display: flex;
+            margin: 10px 0;
+            align-items: center;
+        }
+        .form-row label {
+            width: 100px;
+            color: blue;
+            font-weight: bold;
+        }
+        .form-row input[type="text"],
+        .form-row input[type="email"] {
+            flex: 1;
+            padding: 5px;
+        }
+        .hobby-group {
+              font-size: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: 100px;
+            gap: 15px 40px;
+        }
+        .hobby-group label {
+            color: orangered;
+        }
+        .form-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .form-buttons input {
+            padding: 5px 15px;
+            margin: 0 10px;
+            background-color: #eee;
+            border: 1px solid #888;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form method="get" action="">
+            <div class="form-title">SỞ THÍCH CỦA BẠN</div>
+
+            <div class="form-row">
+                <label for="hovaten">Họ và tên</label>
+                <input type="text" name="hovaten" id="hovaten" size="30">
+            </div>
+
+            <div class="form-row">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" size="30">
+            </div>
+
+            <div class="form-row">
+                <label>Sở thích</label>
+                <div class="hobby-group">
+                    <label><input type="checkbox" name="sothich" value="Thể thao"> Thể thao</label>
+                    <label><input type="checkbox" name="sothich" value="Âm nhạc"> Âm nhạc</label>
+                    <label><input type="checkbox" name="sothich" value="Đọc sách"> Đọc sách</label>
+                    <label><input type="checkbox" name="sothich" value="Lướt web"> Lướt web</label>
+                    <label><input type="checkbox" name="sothich" value="Chơi game"> Chơi game</label>
+                    <label><input type="checkbox" name="sothich" value="Điện ảnh"> Điện ảnh</label>
+                    <label><input type="checkbox" name="sothich" value="Du lịch"> Du lịch</label>
+                </div>
+            </div>
+
+            <div class="form-buttons">
+                <input type="submit" value="Gửi thông tin">
+                <input type="reset" value="Nhập lại">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
