@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Converter</title>
+</head>
+<body>
+    <h2>Currency Converter</h2>
+
+    From:
+    <select id="from">
+        <option value="VND">VND</option>
+        <option value="USD">USD</option>
+    </select>
+
+    To:
+    <select id="to">
+        <option value="USD">USD</option>
+        <option value="VND">VND</option>
+    </select>
+
+    <br><br>
+    Amount: <input type="number" id="amount">
+    <button onclick="convert()">Convert</button>
+
+    <p id="result"></p>
+
+    <script>
+        function convert() {
+            let from = document.getElementById("from").value;
+            let to = document.getElementById("to").value;
+            let amount = Number(document.getElementById("amount").value);
+
+            let result = 0;
+
+          
+            if (from === "VND" && to === "USD") {
+                result = amount / 24000;
+            } else if (from === "USD" && to === "VND") {
+                result = amount * 24000;
+            } else {
+                result = amount;
+            }
+
+            document.getElementById("result").innerText = `Kết quả: ${result}`;
+        }
+    </script>
+</body>
+</html>
