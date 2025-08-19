@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let diemKT = parseFloat(prompt("Nhập điểm kiểm tra:"));
+        let diemGK = parseFloat(prompt("Nhập điểm giữa kỳ:"));
+        let diemCK = parseFloat(prompt("Nhập điểm cuối kỳ:"));
+        let diemTB = (diemKT + diemGK + diemCK) / 3;
+        if(diemTB < 0 || diemTB > 10) {
+            document.write("Điểm trung bình không hợp lệ. Vui lòng nhập lại.");
+        } else if(diemTB < 5) {
+            document.write("B đạt danh hiệu HSTB.");
+        } else if(diemTB >= 5 && diemTB < 8) {
+            document.write("B đạt danh hiệu HSK.");
+        } else {
+            document.write("B đạt danh hiệu HSG.");
+        }
+    </script>
+</body>
+</html>

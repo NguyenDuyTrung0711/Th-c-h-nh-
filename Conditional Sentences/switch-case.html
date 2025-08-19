@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="month" placeholder="Enter month">
+    <button id="calculator">Calculator</button>
+    <div id="result"></div>
+    <script>
+        document.getElementById("calculator").addEventListener("click", function() {
+            let month = parseInt(document.getElementById("month").value);
+            let daysInMonth;
+            let result = document.getElementById("result");
+
+            if (month < 1 || month > 12) {
+                result.textContent = "Invalid month. Please enter a month between 1 and 12.";
+                return;
+            }
+
+            switch (month) {
+                case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                    daysInMonth = 31;
+                    break;
+                case 4: case 6: case 9: case 11:
+                    daysInMonth = 30;
+                    break;
+                case 2:
+                    let year = new Date().getFullYear();
+                    daysInMonth = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0) ? 29 : 28;
+                    break;
+            }
+
+            result.textContent = `Month ${month} has ${daysInMonth} days.`;
+        });
+    </script>  
+</body>
