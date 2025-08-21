@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 3: Hình vuông</title>
+</head>
+<body>
+  <h2>Bài 3: Tính diện tích hình vuông</h2>
+  <button onclick="tinh()">Tính diện tích</button>
+
+  <script>
+    function tinh() {
+      let a = Number(prompt("Nhập cạnh a:"));
+      if (a > 0) {
+        alert("Diện tích hình vuông = " + (a * a));
+      } else {
+        alert("Cạnh phải > 0");
+      }
+    }
+  </script>
+</body>
+</html>

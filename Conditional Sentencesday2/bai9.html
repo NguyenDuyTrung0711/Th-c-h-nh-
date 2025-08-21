@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 9</title>
+</head>
+<body>
+<h2>Bài 9: Kiểm tra tam giác</h2>
+<script>
+  let a = Number(prompt("Nhập cạnh a:"));
+  let b = Number(prompt("Nhập cạnh b:"));
+  let c = Number(prompt("Nhập cạnh c:"));
+  if (a > 0 && b > 0 && c > 0 && a + b > c && a + c > b && b + c > a) {
+    alert("a, b, c là cạnh của một tam giác");
+  } else {
+    alert("Không phải tam giác");
+  }
+</script>
+</body>
+</html>

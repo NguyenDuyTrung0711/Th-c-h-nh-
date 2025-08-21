@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 11</title>
+</head>
+<body>
+<h2>Bài 11: Tính thuế thu nhập cá nhân</h2>
+<script>
+  let thuNhap = Number(prompt("Nhập thu nhập (VNĐ):"));
+  let thue;
+  if (thuNhap <= 5000000) {
+    thue = thuNhap * 0.05;
+  } else if (thuNhap <= 10000000) {
+    thue = thuNhap * 0.1;
+  } else {
+    thue = thuNhap * 0.2;
+  }
+  alert("Thuế TNCN phải nộp = " + thue + " VNĐ");
+</script>
+</body>
+</html>
