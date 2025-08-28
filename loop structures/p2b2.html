@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 2</title>
+</head>
+<body>
+  <h2>Bài 2: Giai thừa</h2>
+  <script>
+    let n = parseInt(prompt("Nhập số nguyên dương:"));
+    
+    // dùng for
+    let gt_for = 1;
+    for (let i = 1; i <= n; i++) {
+      gt_for *= i;
+    }
+    document.write("Giai thừa (for): " + gt_for + "<br>");
+
+    // dùng while
+    let i = 1, gt_while = 1;
+    while (i <= n) {
+      gt_while *= i;
+      i++;
+    }
+    document.write("Giai thừa (while): " + gt_while + "<br>");
+
+    // dùng do-while
+    let j = 1, gt_do = 1;
+    do {
+      gt_do *= j;
+      j++;
+    } while (j <= n);
+    document.write("Giai thừa (do-while): " + gt_do + "<br>");
+  </script>
+</body>
+</html>

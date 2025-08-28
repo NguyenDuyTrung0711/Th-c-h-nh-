@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 3</title>
+</head>
+<body>
+  <h2>Bài 3: Tam giác vuông</h2>
+  <pre id="output"></pre>
+
+  <script>
+    let output = "";
+    let h = 5; // chiều cao tam giác
+
+    // Góc vuông dưới-trái
+    for (let i = 1; i <= h; i++) {
+      for (let j = 1; j <= i; j++) {
+        output += "*";
+      }
+      output += "\n";
+    }
+    output += "\n";
+
+    // Góc vuông trên-trái
+    for (let i = h; i >= 1; i--) {
+      for (let j = 1; j <= i; j++) {
+        output += "*";
+      }
+      output += "\n";
+    }
+    output += "\n";
+
+    // Góc vuông dưới-phải
+    for (let i = 1; i <= h; i++) {
+      for (let k = h; k > i; k--) {
+        output += " ";
+      }
+      for (let j = 1; j <= i; j++) {
+        output += "*";
+      }
+      output += "\n";
+    }
+    output += "\n";
+
+    // Góc vuông trên-phải
+    for (let i = h; i >= 1; i--) {
+      for (let k = h; k > i; k--) {
+        output += " ";
+      }
+      for (let j = 1; j <= i; j++) {
+        output += "*";
+      }
+      output += "\n";
+    }
+
+    document.getElementById("output").innerText = output;
+  </script>
+</body>
+</html>
