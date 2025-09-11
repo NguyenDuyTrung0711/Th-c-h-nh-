@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 7</title>
+</head>
+<body>
+    <script>
+        // Khởi tạo mảng số nguyên gồm 10 phần tử
+        let arr = [5, 8, 2, 9, 1, 7, 4, 6, 3, 0];
+        document.write(`Mảng ban đầu: [${arr}]<br>`);
+        // Nhập vào một số nguyên V
+        let V = parseInt(prompt("Nhập vào một số nguyên V:"));
+        // Tìm vị trí của V trong mảng
+        let index = arr.indexOf(V);
+        if (index !== -1) {
+            // Dịch các phần tử bên phải sang trái
+            for (let i = index; i < arr.length - 1; i++) {
+                arr[i] = arr[i + 1];
+            }
+            // Gán 0 cho phần tử cuối cùng
+            arr[arr.length - 1] = 0;
+            document.write(`Mảng sau khi xóa ${V}: [${arr}]`);
+        } else {
+            document.write(`${V} không thuộc mảng.`);
+        }
+    </script>
+</body>
+</html>
