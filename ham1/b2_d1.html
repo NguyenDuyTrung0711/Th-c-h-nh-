@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tăng Giá Trị</title>
+</head>
+<body>
+
+    <h1>Tăng Giá Trị Của Một Số</h1>
+    
+    <p>Giá trị ban đầu là: <span id="originalValue"></span></p>
+    <p>Giá trị sau khi tăng là: <span id="incrementedValue"></span></p>
+
+    <script>
+        // Hàm tăng giá trị lên 1
+        function incrementNumber(number) {
+            return number + 1;
+        }
+
+        // Giá trị số ban đầu
+        const myNumber = 10;
+
+        // Gọi hàm và lưu kết quả
+        const newNumber = incrementNumber(myNumber);
+
+        // Hiển thị kết quả lên trang web
+        document.getElementById("originalValue").textContent = myNumber;
+        document.getElementById("incrementedValue").textContent = newNumber;
+    </script>
+
+</body>
+</html>

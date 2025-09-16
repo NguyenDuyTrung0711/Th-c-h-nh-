@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <label for="a">Số a:</label>
+    <input type="number" id="a" value="4"><br><br>
+    
+    <label for="b">Số b:</label>
+    <input type="number" id="b" value="4"><br><br>
+
+    <p id="result"></p>
+
+    <script>
+        function sum() {
+            // Lấy giá trị từ các input field
+            let a = document.getElementById("a").value;
+            let b = document.getElementById("b").value;
+
+            // Chuyển đổi giá trị sang dạng số trước khi tính toán
+            a = parseFloat(a);
+            b = parseFloat(b);
+
+            return (a * a + b * b);
+        }
+        
+        // Gọi hàm và hiển thị kết quả
+        document.getElementById("result").innerHTML = sum(); // This will print 25
+    </script>
+
+</body>
+</html>

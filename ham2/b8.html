@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function reverseArrayManually(arr) {
+  // Tạo một mảng rỗng để chứa các phần tử đã đảo ngược
+  let newArray = [];
+  // Lặp từ phần tử cuối cùng của mảng gốc về đầu
+  for (let i = arr.length - 1; i >= 0; i--) {
+    // Thêm các phần tử vào mảng mới
+    newArray.push(arr[i]);
+  }
+  return newArray;
+}
+
+// Gọi và kiểm tra hàm
+let originalNumbers = [10, 20, 30, 40];
+let newReversedArray = reverseArrayManually(originalNumbers);
+
+document.write("Mảng đã đảo ngược:", newReversedArray); // Kết quả: [40, 30, 20, 10]
+document.write("Mảng gốc (không bị thay đổi):", originalNumbers); // Kết quả: [10, 20, 30, 40]
+    </script>
+</body>
+</html>
