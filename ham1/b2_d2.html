@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính toán hình tròn</title>
+</head>
+<body>
+    <script>
+        function calculateArea(radius) {
+            return Math.PI * radius * radius;
+        }
+
+        function calculateCircumference(radius) {
+            return 2 * Math.PI * radius;
+        }
+
+        const radius = 5;
+        const area = calculateArea(radius);
+        const circumference = calculateCircumference(radius);
+
+        document.write(`<h1>Kết quả tính toán hình tròn</h1>`);
+        document.write(`<p>Với bán kính (r) = <strong>${radius}</strong></p>`);
+        document.write(`<p>Diện tích hình tròn là: <strong>${area.toFixed(2)}</strong></p>`);
+        document.write(`<p>Chu vi hình tròn là: <strong>${circumference.toFixed(2)}</strong></p>`);
+    </script>
+</body>
+</html>

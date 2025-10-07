@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Khai báo biến result với giá trị ban đầu là 0
+let result = 0; 
+
+// Hiển thị giá trị của result trước khi gọi hàm
+alert("Giá trị của result trước khi gọi hàm: " + result);
+
+function addNumbers() {
+    firstNum = 4;
+    secondNum = 8;
+    result = firstNum + secondNum; // Gán giá trị mới cho biến result toàn cục
+    return result;
+}
+
+// Gọi hàm và gán giá trị trả về cho biến result
+result = addNumbers();
+
+// Hiển thị giá trị của result sau khi gọi hàm
+alert("Giá trị của result sau khi gọi hàm: " + result);
+    </script>
+</body>
+</html>

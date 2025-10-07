@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Giai Thừa</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        input, button { padding: 8px; margin-top: 10px; }
+        #result { margin-top: 20px; font-weight: bold; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+
+    <h2>Tính Giai Thừa của một số</h2>
+    <label for="numberInput">Nhập một số nguyên không âm:</label>
+    <input type="text" id="numberInput">
+    <button onclick="calculateFactorial()">Tính Giai Thừa</button>
+
+    <div id="result"></div>
+
+    <script>
+        // Hàm kiểm tra xem dữ liệu nhập có phải là một số nguyên không âm hợp lệ không
+        function isValidNumber(input) {
+            const num = Number(input);
+            return !isNaN(num) && Number.isInteger(num) && num >= 0;
+        }
+
+        // Hàm tính giai thừa
+        function factorial(n) {
+            if (n === 0) {
+                return 1;
+            }
+            let result = 1;
+            for (let i = 1; i <= n; i++) {
+                result *= i;
+            }
+            return result;
+        }
+
+        // Hàm chính được gọi khi người dùng bấm nút
+        function calculateFactorial() {
+            const inputElement = document.getElementById("numberInput");
+            const resultElement = document.getElementById("result");
+            const userInput = inputElement.value;
+
+            if (isValidNumber(userInput)) {
+                const num = Number(userInput);
+                const fact = factorial(num);
+                resultElement.textContent = `Giai thừa của ${num} là: ${fact}`;
+                resultElement.classList.remove('error');
+            } else {
+                resultElement.textContent = "Dữ liệu nhập không hợp lệ. Vui lòng nhập một số nguyên không âm.";
+                resultElement.classList.add('error');
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>20 số nguyên tố đầu tiên</title>
+</head>
+<body>
+<script>
+    // Bước 1: Nhập số lượng số nguyên tố cần in
+    let numbers = parseInt(prompt("Nhập số lượng số nguyên tố cần hiển thị:"));
+
+    // Bước 2: Khai báo biến đếm số nguyên tố đã in
+    let count = 0;
+
+    // Bước 3: Khai báo biến N để kiểm tra số nguyên tố (bắt đầu từ 2)
+    let N = 2;
+
+    // Bước 4: Vòng lặp while
+    while (count < numbers) {
+        let isPrime = true;
+
+        // Kiểm tra N có phải số nguyên tố không
+        if (N < 2) {
+            isPrime = false;
+        } else {
+            for (let i = 2; i <= Math.sqrt(N); i++) {
+                if (N % i === 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+
+        // Nếu là số nguyên tố → in ra & tăng count
+        if (isPrime) {
+            document.write(N + " ");
+            count++;
+        }
+
+        // Tăng N để kiểm tra số tiếp theo
+        N++;
+    }
+</script>
+</body>
+</html>

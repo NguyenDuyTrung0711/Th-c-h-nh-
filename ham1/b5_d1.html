@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm Chòm Sao</title>
+</head>
+<body>
+    <h1>Tìm Tên Chòm Sao Tương Ứng</h1>
+    <p>Vui lòng nhập tên một trong các ngôi sao sau: Polaris, Aldebaran, Deneb, Vega, Altair, Dubhe, Regulus.</p>
+    <div id="result"></div>
+
+    <script>
+        // Mảng chứa tên các ngôi sao
+        const stars = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+
+        // Mảng chứa tên các chòm sao tương ứng
+        const constellations = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+        // Hàm tìm chòm sao dựa trên tên ngôi sao
+        function findConstellation(starName) {
+            // Lặp qua mảng ngôi sao để tìm kiếm
+            for (let i = 0; i < stars.length; i++) {
+                // Kiểm tra xem tên ngôi sao có khớp không
+                if (stars[i].toLowerCase() === starName.toLowerCase()) {
+                    // Nếu tìm thấy, trả về tên chòm sao tương ứng
+                    return constellations[i];
+                }
+            }
+            // Nếu không tìm thấy ngôi sao, trả về null
+            return null;
+        }
+
+        // --- Logic tương tác với người dùng ---
+        
+        // Sử dụng prompt để lấy tên ngôi sao từ người dùng
+        const userInput = prompt("Nhập tên một ngôi sao:");
+
+        // Lấy phần tử div để hiển thị kết quả
+        const resultDiv = document.getElementById("result");
+
+        if (userInput) {
+            // Gọi hàm và lưu kết quả
+            const foundConstellation = findConstellation(userInput);
+
+            // Xử lý kết quả
+            if (foundConstellation) {
+                // Nếu tìm thấy chòm sao
+                resultDiv.innerHTML = `Ngôi sao **${userInput}** thuộc chòm sao **${foundConstellation}**.`;
+            } else {
+                // Nếu không tìm thấy chòm sao
+                resultDiv.innerHTML = "Không tìm thấy ngôi sao bạn đã nhập. Vui lòng thử lại.";
+            }
+        } else {
+            // Trường hợp người dùng hủy hoặc không nhập gì
+            resultDiv.innerHTML = "Bạn đã hủy hoặc không nhập tên ngôi sao.";
+        }
+
+    </script>
+</body>
+</html>

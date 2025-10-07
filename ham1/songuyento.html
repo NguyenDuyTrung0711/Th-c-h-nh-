@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         function isPrime(num) {
+  // Các số nhỏ hơn hoặc bằng 1 không phải là số nguyên tố
+  if (num <= 1) {
+    return false;
+  }
+  // 2 là số nguyên tố duy nhất chẵn
+  if (num === 2) {
+    return true;
+  }
+  // Các số chẵn lớn hơn 2 không phải là số nguyên tố
+  if (num % 2 === 0) {
+    return false;
+  }
+  // Lặp từ 3 đến căn bậc hai của số đó, chỉ kiểm tra các số lẻ
+  for (let i = 3; i <= Math.sqrt(num); i += 2) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+function findPrimesUpTo(limit) {
+  const primes = [];
+  for (let i = 2; i < limit; i++) {
+    if (isPrime(i)) {
+      primes.push(i);
+    }
+  }
+  return primes;
+}
+
+const primesLessThan10000 = findPrimesUpTo(10000);
+document.write(`Có ${primesLessThan10000.length} số nguyên tố nhỏ hơn 10.000.`);
+// Bạn có thể xem danh sách các số nguyên tố
+// console.log(primesLessThan10000);
+    </script>
+   
+</body>
+</html>

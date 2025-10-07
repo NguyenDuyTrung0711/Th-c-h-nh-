@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 8</title>
+</head>
+<body>
+  <h2>Bài 8: Game đoán số</h2>
+  <button onclick="playGame()">Chơi</button>
+
+  <script>
+    function playGame() {
+      // Người dùng chọn khoảng
+      let min = parseInt(prompt("Nhập số nhỏ nhất của khoảng:"));
+      let max = parseInt(prompt("Nhập số lớn nhất của khoảng:"));
+
+      // Sinh số ngẫu nhiên trong khoảng
+      let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+
+      let guess;
+      do {
+        guess = parseInt(prompt("Nhập số bạn đoán:"));
+        if (guess > randomNumber) {
+          alert("Số bạn đoán LỚN hơn kết quả!");
+        } else if (guess < randomNumber) {
+          alert("Số bạn đoán NHỎ hơn kết quả!");
+        } else {
+          alert("🎉 Chúc mừng! Bạn đã đoán đúng số: " + randomNumber);
+        }
+      } while (guess !== randomNumber);
+    }
+  </script>
+</body>
+</html>

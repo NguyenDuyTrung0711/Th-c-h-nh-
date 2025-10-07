@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 8</title>
+</head>
+<body>
+    <script>
+        // Khởi tạo mảng số nguyên gồm 10 phần tử
+        let arr = [12, 5, 8, 20, 3, 17, 9, 1, 15, 6];
+        document.write(`Mảng ban đầu: [${arr}]<br>`);
+        // Sắp xếp mảng theo thứ tự giảm dần
+        arr.sort(function(a, b) {
+            return b - a;
+        });
+        document.write(`Mảng sau khi sắp xếp giảm dần: [${arr}]`);
+    </script>
+</body>
+</html>

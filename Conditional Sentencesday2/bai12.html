@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 12</title>
+</head>
+<body>
+<h2>Bài 12: Tính lãi ngân hàng</h2>
+<script>
+  let goc = Number(prompt("Nhập số tiền ban đầu:"));
+  let thang = Number(prompt("Nhập số tháng gửi:"));
+  let laiSuat = Number(prompt("Nhập lãi suất hàng tháng (%):"));
+  if (goc > 0 && thang > 0 && laiSuat > 0) {
+    let tong = goc * Math.pow((1 + laiSuat/100), thang);
+    alert("Số tiền sau " + thang + " tháng = " + tong.toFixed(2) + " VNĐ");
+  } else {
+    alert("Dữ liệu không hợp lệ");
+  }
+</script>
+</body>
+</html>

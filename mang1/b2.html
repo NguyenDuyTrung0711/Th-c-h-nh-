@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+</head>
+<body>
+    <script>
+        // Khởi tạo mảng số nguyên gồm 10 phần tử khác nhau
+        let arr = [8, 15, 3, 22, 7, 19, 5, 12, 27, 1];
+        let max = arr[0];
+        let index = 0;
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+                index = i;
+            }
+        }
+        document.write(`Phần tử lớn nhất trong mảng là ${max} ở vị trí ${index}.`);
+    </script>
+</body>
+</html>

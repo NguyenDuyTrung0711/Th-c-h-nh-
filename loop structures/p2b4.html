@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 4</title>
+</head>
+<body>
+  <h2>Bài 4: Hình chữ nhật</h2>
+  <pre id="rect"></pre>
+
+  <script>
+    let width = 20;
+    let height = 7;
+    let rect = "";
+
+    for (let i = 1; i <= height; i++) {
+      for (let j = 1; j <= width; j++) {
+        if (i === 1 || i === height || j === 1 || j === width) {
+          rect += "*";
+        } else {
+          rect += " ";
+        }
+      }
+      rect += "\n";
+    }
+
+    document.getElementById("rect").innerText = rect;
+  </script>
+</body>
+</html>

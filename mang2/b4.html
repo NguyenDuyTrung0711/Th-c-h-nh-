@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đếm số từ trong chuỗi</title>
+</head>
+<body>
+    <script>
+        // Nhập chuỗi từ người dùng
+        let str = prompt("Nhập vào một chuỗi:");
+        // Loại bỏ khoảng trắng đầu/cuối và tách các từ bằng khoảng trắng
+        let words = str.trim().split(/\s+/);
+        // Đếm số từ
+        let count = str.trim() === "" ? 0 : words.length;
+        document.write(`Số từ trong chuỗi là: ${count}`);
+    </script>
+</body>
+</html>

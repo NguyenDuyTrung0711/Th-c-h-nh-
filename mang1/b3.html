@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 3</title>
+</head>
+<body>
+    <script>
+        // Khởi tạo mảng số nguyên
+        let arr = [5, 12, 8, 20, 7, 15, 3, 18];
+        document.write(`Mảng ban đầu: [${arr}]<br>`);
+        // Tìm giá trị lớn nhất
+        let max = arr[0];
+        let sum = arr[0];
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+            sum += arr[i];
+        }
+        let average = sum / arr.length;
+        document.write(`Giá trị lớn nhất trong mảng là: ${max}<br>`);
+        document.write(`Giá trị trung bình của các phần tử trong mảng là: ${average}`);
+    </script>
+</body>
+</html>

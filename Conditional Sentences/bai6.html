@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tính hoa hồng</title>
+</head>
+<body>
+  <script>
+
+    let doanhSo = parseFloat(prompt("Nhập doanh số bán hàng:"));
+    let hoahong = 0;
+
+    if (doanhSo < 0) {
+      document.write("Doanh số không hợp lệ!");
+    } 
+    else if (doanhSo < 1000000) {
+      hoahong = 0;
+      document.write("Doanh số: " + doanhSo.toLocaleString() + " đồng.<br>");
+      document.write("Bạn chưa đủ điều kiện nhận hoa hồng.");
+    } 
+    else if (doanhSo < 2000000) {
+      hoahong = doanhSo * 0.05;
+      document.write("Doanh số: " + doanhSo.toLocaleString() + " đồng.<br>");
+      document.write("Hoa hồng: " + hoahong.toLocaleString() + " đồng (5%).");
+    } 
+    else if (doanhSo < 5000000) {
+      hoahong = doanhSo * 0.1;
+      document.write("Doanh số: " + doanhSo.toLocaleString() + " đồng.<br>");
+      document.write("Hoa hồng: " + hoahong.toLocaleString() + " đồng (10%).");
+    } 
+    else {
+      hoahong = doanhSo * 0.15;
+      document.write("Doanh số: " + doanhSo.toLocaleString() + " đồng.<br>");
+      document.write("Hoa hồng: " + hoahong.toLocaleString() + " đồng (15%).");
+    }
+  </script>
+</body>
+</html>

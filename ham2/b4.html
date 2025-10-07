@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm Tra Nhập Liệu</title>
+</head>
+<body>
+
+    <h2>Kiểm Tra Ký Tự Số</h2>
+    <label for="inputField">Nhập một ký tự hoặc số:</label>
+    <input type="text" id="inputField">
+    <button onclick="checkInput()">Kiểm Tra</button>
+
+    <p id="result"></p>
+
+    <script>
+        function checkInput() {
+            // Lấy giá trị từ trường input
+            const inputValue = document.getElementById("inputField").value;
+            const resultElement = document.getElementById("result");
+
+            // Kiểm tra xem giá trị có phải là một số hay không
+            // !isNaN(inputValue) sẽ trả về true nếu giá trị là một số
+            // inputValue.trim() !== '' để đảm bảo chuỗi không rỗng
+            if (!isNaN(inputValue) && inputValue.trim() !== '') {
+                resultElement.textContent = `"${inputValue}" là một ký tự số.`;
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent = `"${inputValue}" không phải là ký tự số.`;
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+</html>

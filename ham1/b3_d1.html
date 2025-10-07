@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkAndSum(param1, param2) {
+  if (param1 > param2) {
+    alert("Giá trị của tham số thứ nhất lớn hơn tham số thứ hai.");
+  } else {
+    return param1 + param2;
+  }
+}
+
+
+checkAndSum(10, 5); // Hiển thị hộp thoại: "Giá trị của tham số thứ nhất lớn hơn tham số thứ hai."
+
+// Ví dụ 2: Tham số thứ  nhất nhỏ hơn tham số thứ hai
+const result1 = checkAndSum(3, 8); 
+document.write(result1); // Kết quả: 11 (3 + 8)
+
+// Ví dụ 3: Tham số thứ nhất bằng tham số thứ hai
+const result2 = checkAndSum(7, 7); 
+document.write(result2); // Kết quả: 14 (7 + 7)
+    </script>
+</body>
+</html>

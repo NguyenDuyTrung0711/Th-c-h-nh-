@@ -1,0 +1,108 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Đăng Ký Học Viên</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #fffca3;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            padding: 10px 20px 20px 20px;
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-weight: bold;
+            font-size: 24px;
+            color: #0055ff;
+            background-color: #d4f7d9;
+            padding: 5px 10px;
+        }
+        form {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            grid-row-gap: 15px;
+            align-items: center;
+        }
+        label {
+            color: #0055ff;
+            font-size: 18px;
+        }
+        input[type="text"],
+        input[type="date"],
+        select,
+        textarea {
+            font-size: 16px;
+            padding: 3px 5px;
+            border: 1px solid #999;
+            font-family: "Times New Roman", serif;
+        }
+        textarea {
+            resize: none;
+            height: 80px;
+        }
+        .gender-group {
+            font-family: "Times New Roman", serif;
+            font-size: 20px;
+            color: black;
+        }
+        .gender-group label {
+            color: black;
+            margin-right: 20px;
+            font-weight: normal;
+        }
+        .buttons {
+            grid-column: 2 / 3;
+            margin-top: 10px;
+        }
+        button {
+            font-family: "Times New Roman", serif;
+            font-size: 18px;
+            padding: 5px 15px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container" role="main">
+    <h1>ĐĂNG KÝ HỌC VIÊN</h1>
+    <form>
+        <label for="fullname">Họ và tên</label>
+        <input type="text" id="fullname" name="fullname" autocomplete="name" />
+
+        <label for="dob">Ngày sinh</label>
+        <input type="text" id="dob" name="dob" size="15" />
+
+        <label>Giới tính</label>
+        <div class="gender-group" role="radiogroup" aria-labelledby="gender-label">
+            <label><input type="radio" name="gender" value="nam" /> Nam</label>
+            <label><input type="radio" name="gender" value="nu" /> Nữ</label>
+        </div>
+
+        <label for="address">Địa chỉ</label>
+        <textarea id="address" name="address"></textarea>
+
+        <label for="class">Lớp</label>
+        <select id="class" name="class">
+            <option>— Chọn lớp —</option>
+            <option>— Lớp nâng cao —</option>
+        </select>
+
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" />
+
+        <label for="phone">Điện thoại</label>
+        <input type="text" id="phone" name="phone" />
+
+        <div class="buttons">
+            <button type="submit">Đăng ký</button>
+            <button type="reset">Nhập lại</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

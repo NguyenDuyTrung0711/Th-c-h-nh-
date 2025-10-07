@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="ST1" >Nhap so thu nhat: </label>
+    <input type ="number" id = "ST1" > <br>
+    <label for="ST2">Nhap so thu 2: </label>
+    <input type="number" name="" id="ST2"><br>
+    <label for="ST3">Nhap so thu 3: </label>
+    <input type="number" name="" id="ST3"><br>
+    <button onclick="findMax()">Tim so lon nhat</button>
+    <script>
+function findMax() {
+    const num1 = parseFloat(document.getElementById("ST1").value);
+    const num2 = parseFloat(document.getElementById("ST2").value);
+    const num3 = parseFloat(document.getElementById("ST3").value);
+    let maxNum = num1;
+    if (num2 > maxNum) {
+        maxNum = num2;
+    }
+    if (num3 > maxNum) {
+        maxNum = num3;
+    }
+    alert("So lon nhat la: " + maxNum);
+}
+    </script>
+</body>
+</html>
