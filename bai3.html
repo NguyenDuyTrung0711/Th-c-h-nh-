@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý Sách</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 600px;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 6px;
+            text-align: center;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+        .buttons {
+            margin-top: 10px;
+        }
+        .buttons button {
+            margin: 5px;
+            padding: 6px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Quản lí sách</h2>
+
+    <table id="bangSach">
+        <thead>
+            <tr>
+                <th>Mã số sách</th>
+                <th>Tên sách</th>
+                <th>Năm xuất bản</th>
+                <th>Số quyển</th>
+                <th>Tình trạng</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <div class="buttons">
+        <button onclick="themSachDaCo()">Thêm sách đã có</button>
+        <button onclick="themSachMoi()">Thêm sách mới</button>
+        <button onclick="muonSach()">Mượn sách</button>
+        <button onclick="hienThiSachNhieuNhat()">Hiển thị sách nhiều nhất</button>
+    </div>
+
+    <script>
+        let danhSachSach = [
+            { ma: "12345", ten: "Toán", nam: 2000, soQuyen: 3, tinhTrang: true },
+            { ma: "23456", ten: "Văn", nam: 1998, soQuyen: 4, tinhTrang: true },
+            { ma: "37456", ten: "Tiếng Anh", nam: 1999, soQuyen: 0, tinhTrang: false }
+        ];
+
+        function capNhatTinhTrang(sach) {
+            sach.tinhTrang = sach.soQuyen > 0;
+        }
+
+        function hienThiDanhSach() {
+            const tbody = document.querySelector("#bangSach tbody");
+            tbody.innerHTML = "";
+            for (let s of danhSachSach) {
+                let row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${s.ma}</td>
+                    <td>${s.ten}</td>
+                    <td>${s.nam}</td>
+                    <td>${s.soQuyen}</td>
+                    <td>${s.tinhTrang ? "True" : "False"}</td>
+                `;
+                tbody.appendChild(row);
+            }
+        }
+
+        function themSachMoi() {
+            let ma;
+            do {
+                ma = prompt("Nhập mã sách (1xxxx - 5xxxx):");
+            } while (!/^[1-5][0-9]{4}$/.test(ma));
+
+            let ten;
+            do {
+                ten = prompt("Nhập tên sách:");
+            } while (!ten || ten.trim() === "");
+
+            let nam;
+            do {
+                nam = prompt("Nhập năm xuất bản (4 chữ số):");
+            } while (!/^\d{4}$/.test(nam));
+
+            let soQuyen;
+            do {
+                soQuyen = parseInt(prompt("Nhập số quyển:"));
+            } while (isNaN(soQuyen) || soQuyen < 0);
+
+            let tinhTrang = soQuyen > 0;
+
+            danhSachSach.push({
+                ma: ma,
+                ten: ten,
+                nam: nam,
+                soQuyen: soQuyen,
+                tinhTrang: tinhTrang
+            });
+
+            hienThiDanhSach();
+            alert("✅ Thêm sách mới thành công!");
+        }
+
+        function themSachDaCo() {
+            let ma = prompt("Nhập mã sách cần tăng số lượng:");
+            let sach = danhSachSach.find(s => s.ma === ma);
+            if (sach) {
+                let soThem = parseInt(prompt("Nhập số lượng muốn thêm:"));
+                if (!isNaN(soThem) && soThem > 0) {
+                    sach.soQuyen += soThem;
+                    capNhatTinhTrang(sach);
+                    hienThiDanhSach();
+                    alert("✅ Cập nhật thành công!");
+                } else {
+                    alert("❌ Số lượng không hợp lệ!");
+                }
+            } else {
+                alert("❌ Không tìm thấy mã sách!");
+            }
+        }
+
+        function muonSach() {
+            let ma = prompt("Nhập mã sách cần mượn:");
+            let sach = danhSachSach.find(s => s.ma === ma);
+            if (sach) {
+                if (sach.soQuyen > 0) {
+                    sach.soQuyen--;
+                    capNhatTinhTrang(sach);
+                    hienThiDanhSach();
+                    alert("✅ Mượn sách thành công!");
+                } else {
+                    alert("❌ Sách đã hết!");
+                }
+            } else {
+                alert("❌ Không tìm thấy mã sách!");
+            }
+        }
+
+        function hienThiSachNhieuNhat() {
+            if (danhSachSach.length === 0) return;
+            let max = Math.max(...danhSachSach.map(s => s.soQuyen));
+            let sachMax = danhSachSach.filter(s => s.soQuyen === max);
+            let tenSach = sachMax.map(s => s.ten).join(", ");
+            alert(`📚 Sách có số lượng nhiều nhất (${max} quyển): ${tenSach}`);
+        }
+
+        hienThiDanhSach();
+    </script>
+</body>
+</html>
