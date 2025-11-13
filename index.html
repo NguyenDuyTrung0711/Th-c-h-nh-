@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản lý Thư viện</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>📚 Quản lý Thư viện</header>
+
+<div class="container">
+  <!-- Form tìm kiếm -->
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Tìm sách theo tên hoặc tác giả...">
+    <button onclick="searchBooks()">Tìm kiếm</button>
+  </div>
+
+  <!-- Form thêm/sửa sách -->
+  <div class="form-add">
+    <h2>Thêm / Sửa Sách</h2>
+    <input type="hidden" id="bookId">
+    <input type="text" id="title" placeholder="Tên sách">
+    <input type="text" id="author" placeholder="Tác giả">
+    <input type="number" id="year" placeholder="Năm xuất bản">
+    <input type="text" id="image" placeholder="Link ảnh bìa">
+    <textarea id="description" placeholder="Mô tả sách..."></textarea>
+    <button onclick="saveBook()">Lưu sách</button>
+    <button class="btn-clear" onclick="clearForm()">Xóa form</button>
+  </div>
+
+  <!-- Danh sách sách -->
+  <div class="book-list" id="bookList"></div>
+</div>
+
+<!-- Modal Chi tiết -->
+<div class="modal" id="bookModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    
+    <div class="modal-body">
+      <div class="modal-image">
+        <img id="modalImage" src="" alt="">
+      </div>
+      <div class="modal-info">
+        <h2 id="modalTitle"></h2>
+        <p><b>Tác giả:</b> <span id="modalAuthor"></span></p>
+        <p><b>Năm XB:</b> <span id="modalYear"></span></p>
+        <p id="modalDesc"></p>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
